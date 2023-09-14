@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Item({ name, category }) {
+function Item({ name, category, searchMatch }) {
   const [isInCart, setIsInCart] = useState(false);
 
   function handleAddToCartClick() {
@@ -17,6 +17,7 @@ function Item({ name, category }) {
       >
         {isInCart ? "Remove From" : "Add to"} Cart
       </button>
+      {searchMatch && <span className="search-match">Matched</span>}
     </li>
   );
 }
